@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@500&family=Roboto+Mono&display=swap');
 body{
-
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -10,94 +9,74 @@ body{
 }
 
 #form{
-
     padding: 15px;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 select, button{
-
     padding: 8px;
     height: 40px;;
-  
-
 }
 
 select{
     float: left;
     width:200px;
 }
+
 button{
 margin-left: auto;
 margin-right: auto;
-
-    width: 100px;
+width: 100px;
 }
 
 .round{
-
     border-radius: 5px;
     padding: 0;
     margin: 0;
-
 }
+
 .btn{
     padding: 0;
     margin: 0;
 }
 
 .col-6, .col-6-sm{
-
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
     text-align: center;
-
 }
 
 #deaths{
-
     color: crimson;
     padding: 10px;
 }
 
 #cases{
-
     color: rgb(255, 175, 1);
     padding: 10px;
-
 }
 
 h1{
-
     text-align: center;
-
-
 }
 
 .red{
-
     color: red;
-
 }
 
 .box{
-
     border: 2px solid black;
     text-align: center;
-
     margin-top: 50px;
 }
+
 a{
-
-    color: black;
-
+   color: black;
 }
+
 .center{
-
-    text-align: center;
+   text-align: center;
     margin: auto;
-
 }
