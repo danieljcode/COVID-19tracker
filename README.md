@@ -1,5 +1,5 @@
 # About
-A live COVID-19 tracker (deaths, cases, recovered) for 20 countries around the world! Written in Javascript, HTML & CSS
+A live COVID-19 tracker (deaths, cases, recovered) for 203 countries around the world! Written in Javascript, HTML & CSS
 #### Please Star if you fork or create a pull request so others can find the project too! :)
 
  ### Current countries:
