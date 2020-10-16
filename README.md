@@ -92,6 +92,17 @@ A live COVID-19 tracker (deaths, cases, recovered) for 20 countries around the w
 88. Jordan
 89. Libya
 90. Mali
+91. Benin
+92. Mayotte
+93. Qatar
+94. Rwanda
+95. Togo
+96. Vietnam
+97. Yemen
+98. Zimbabwe
+99. Georgia
+100. French Guiana
+101. Comoros
                         
 
 ### Contributors
