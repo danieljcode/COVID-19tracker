@@ -103,6 +103,11 @@ A live COVID-19 tracker (deaths, cases, recovered) for 20 countries around the w
 99. Georgia
 100. French Guiana
 101. Comoros
+102. Jamaica
+103. Kazakhstan
+104. Korea (the Democratic People's Republic of)
+105. Korea (the Republic of)
+106. Kyrgyzstan
                         
 
 ### Contributors
