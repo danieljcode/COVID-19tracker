@@ -1,0 +1,51 @@
+ var ctx = document.getElementById('myChart').getContext('2d');
+    let myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: date,
+        datasets: [
+          {
+            label: 'Total Cases',
+            data: total,
+            borderColor: 'rgba(255, 99, 132)',
+            fill: false,
+          },
+          {
+            label: 'Recovered Cases',
+            data: recovered,
+            borderColor: 'rgba(153, 102, 255, 1)',
+            fill: false,
+          },
+          {
+            label: 'Deaths',
+            data: deaths,
+            borderColor: 'rgba(75, 192, 192, 1)',
+            fill: false,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          yAxes: [
+            {
+              scaleLabel: {
+                display: true,
+                labelString: 'Number of Cases',
+              },
+            },
+          ],
+          xAxes: [
+            {
+              scaleLabel: {
+                display: true,
+                labelString: 'Date(DD/MM/YYYY)',
+              },
+            },
+          ],
+        },
+        title: {
+          display: true,
+          text: `Coronavirus Cases in the World for 90 Days`,
+        },
+      },
+    });
