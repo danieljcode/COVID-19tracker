@@ -1,0 +1,8 @@
+const result = getData();
+result
+  .then((data) => {
+    let date = Object.keys(data.cases);
+    let total = Object.values(data.cases);
+    let deaths = Object.values(data.deaths);
+    let recovered = Object.values(data.recovered);
+};
