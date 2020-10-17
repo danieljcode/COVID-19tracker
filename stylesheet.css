@@ -186,7 +186,9 @@ a:hover{
     
 }
 
-.info a{
+.info a:hover{
+    display:flex;
+    text-align:center;
     color: rgb(54, 75, 197);
     opacity: 1;
 }
