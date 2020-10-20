@@ -152,8 +152,7 @@ h1 {
   margin: 30px auto;
   border-radius: 25px;
   text-align: center;
-  box-shadow: 5px 5px 30px rgba(217, 217, 217, 1.8);
-  padding: 30px 60px !important;
+  
 }
 
 .box-:hover {
@@ -180,7 +179,7 @@ a:hover {
   text-decoration: none;
 }
 .boxBlue {
-  background-color: rgb(156, 208, 250);
+  
   opacity: 1;
 }
 .info {
@@ -564,6 +563,31 @@ a:hover {
 }
 
 .card:hover {
+  border-radius: 50px;
+  transform: scale(1.1);
+}
+
+.box-,
+.boxBlue {
+  box-shadow: 5px 5px 30px rgba(217, 217, 217, 0.7);
+  border-radius: 25px;
+  transition: all .4s ease-in-out;
+  padding: 30px 60px !important;
+}
+
+.box-:hover {
+  box-shadow: 5px 5px 30px rgba(217, 217, 217, 1.8);
+  transform: scale(1.1);
+  border-radius: 50px;
+}
+
+.dark-mode .box-{
+  transition: all .4s ease-in-out;
+  border-radius: 25px;
+}
+
+.dark-mode .box-:hover{
+  box-shadow: 5px 5px 30px rgba(15, 15, 15, 0.801);
   border-radius: 50px;
   transform: scale(1.1);
 }
