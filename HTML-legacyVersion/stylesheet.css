@@ -114,9 +114,7 @@ button {
   box-shadow: 5px 5px 30px rgba(217, 217, 217, 0.7);
 }
 
-.card:hover .fa-virus:hover {
-  color: rgb(76, 169, 23);
-}
+
 
 #deaths {
   color: crimson;
@@ -530,4 +528,14 @@ a:hover {
 }
 .footer .copyright p {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fa-heart:hover {
+   color: green;
+}
+.fa-virus:hover {
+  color: orange;
+}
+.fa-skull-crossbones:hover {
+  color: red;
 }
