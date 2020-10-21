@@ -79,6 +79,7 @@
 78. Morocco
 79. Ghana
 80. Taiwan
+81. Japan
 
 ### Contributors
 
