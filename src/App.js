@@ -77,6 +77,12 @@ const App = () => {
       });
   };
 
+  const getDisplayName = (updateDate) => {
+    let dateTime = new Date(updateDate)
+    let returnValue = `${dateTime.toLocaleString('default', { dateStyle: 'long' })} (${dateTime.toLocaleString('default', { hour12: false, timeStyle: 'short' })})`
+    return returnValue
+  }
+
   return (
     <div className="app">
       <div className="app__left">
@@ -94,6 +100,9 @@ const App = () => {
               ))}
             </Select>
           </FormControl>
+        </div>
+        <div style={{ textAlign: "right", marginBottom: "8px" }}>
+          <b>🔴 Updated: </b>{getDisplayName(countryInfo.updated)}
         </div>
         <div className="app__stats">
           <InfoBox
