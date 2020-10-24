@@ -40,3 +40,10 @@
   font-size: 0.8rem !important;
   margin-top: 15px !important;
 }
+
+@media (max-width: 576px) {
+  .infoBox {
+    min-width:100%;
+    margin-bottom: 15px;
+  }
+}

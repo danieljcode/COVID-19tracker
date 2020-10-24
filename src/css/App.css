@@ -22,6 +22,7 @@ body {
   align-items: center;
   margin-bottom: 20px;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .app__left {
@@ -31,6 +32,7 @@ body {
 .app__stats {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .app__graph {
@@ -49,8 +51,10 @@ body {
 }
 
 .app__image {
-  width: 370px;
+  max-width: 100%;
+  height: auto;
   margin-bottom: 15px;
+  margin-right: 15px;
 }
 
 .app__information > h3 {

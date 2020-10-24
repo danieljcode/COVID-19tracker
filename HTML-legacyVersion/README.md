@@ -10,7 +10,7 @@
 9. Indonesia
 10. Belarus
 11. Belgium
-12. Russia
+12. Russian Federation
 13. Saudi Arabia
 14. Spain
 15. Sweden
@@ -78,6 +78,16 @@
 77. Sudan
 78. Morocco
 79. Ghana
+80. El Salvador
+81. Albania
+82. Chad
+83. Costa Rica
+84. Dominican Republic
+85. Haiti
+86. Israel
+87. Jordan
+88. Libya
+89. Mali
 
 ### Contributors
 
@@ -89,5 +99,6 @@
 - https://github.com/dpakgtm07
 - https://github.com/sqwyer
 - https://github.com/YagyikPrajapat
+- https://github.com/tck13
 
 (PLEASE ADD YOURSELF TO THE CONTRIBUTORS LIST WHEN YOU CREATE A PULL REQUEST)
