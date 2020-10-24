@@ -87,7 +87,7 @@ function getFutureData() {
       var prediction = document.createElement("div");
       prediction.setAttribute("class", "box-");
       var casesNum = document.createElement("h1");
-      casesNum.setAttribute("class", "red");
+      casesNum.setAttribute("class", "crimson");
       var dateNum = document.createElement("h2");
       casesNum.innerHTML =
         `<span class="text-dark">Predicted Cases:</span> ` +
@@ -141,20 +141,20 @@ function createGraph() {
             predictions[5].cases,
           ],
           backgroundColor: [
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(255, 99, 132, 0.2)",
+            'rgba(255,69,0, 0.2)',
+            'rgba(255,69,0, 0.2)',
+            'rgba(255,69,0, 0.2)',
+            'rgba(255,69,0, 0.2)',
+            'rgba(255,69,0, 0.2)',
+            'rgba(255,69,0, 0.2)',
           ],
           borderColor: [
-            "rgba(255, 99, 132, 1)",
-            "rgba(255, 99, 132, 1)",
-            "rgba(255, 99, 132, 1)",
-            "rgba(255, 99, 132, 1)",
-            "rgba(255, 99, 132, 1)",
-            "rgba(255, 99, 132, 1)",
+            'rgba(255, 0, 10, 1)',
+            'rgba(255, 0, 10, 1)',
+            'rgba(255, 0, 10, 1)',
+            'rgba(255, 0, 10, 1)',
+            'rgba(255, 0, 10, 1)',
+            'rgba(255, 0, 10, 1)',
           ],
           borderWidth: 2,
         },
@@ -198,20 +198,20 @@ function createGraph() {
             predictions[5].cases,
           ],
           backgroundColor: [
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(54, 162, 235, 0.2)",
-            "rgba(255, 206, 86, 0.2)",
-            "rgba(75, 192, 192, 0.2)",
-            "rgba(153, 102, 255, 0.2)",
-            "rgba(255, 159, 64, 0.2)",
+            'rgba(255,69,0, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
           ],
           borderColor: [
-            "rgba(255, 99, 132, 1)",
-            "rgba(255, 99, 132, 1)",
-            "rgba(255, 99, 132, 1)",
-            "rgba(255, 99, 132, 1)",
-            "rgba(255, 99, 132, 1)",
-            "rgba(255, 99, 132, 1)",
+            "rgba(255, 0, 10 ,1)",
+            "rgba(255, 0, 10 ,1)",
+            "rgba(255, 0, 10 ,1)",
+            "rgba(255, 0, 10,1)",
+            "rgba(255, 0, 10 ,1)",
+            "rgba(255, 0, 10 ,1)",
           ],
           borderWidth: 2,
         },
@@ -219,6 +219,16 @@ function createGraph() {
     },
     options: {
       events: [],
+      responsive: true,
+
+      legend: {
+        display: true,
+        position: 'top',
+        labels: {
+          usePointStyle: true,
+          boxWidth: 6,
+        },
+      },
       scales: {
         yAxes: [
           {

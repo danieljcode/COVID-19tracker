@@ -138,6 +138,9 @@ h1 {
 .red {
   color: red;
 }
+.crimson {
+  color: crimson;
+}
 
 #predictions {
   display: flex;
