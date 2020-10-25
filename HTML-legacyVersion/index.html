@@ -1,362 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script
-      src="https://kit.fontawesome.com/42575f5eb5.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="ChartJS/Chart.js"></script>
-    <link href="ChartJS/Chart.css" type="text/css" rel="stylesheet" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="stylesheet.css" rel="stylesheet" type="text/css" />
+  <script src="https://kit.fontawesome.com/42575f5eb5.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="ChartJS/Chart.js"></script>
+  <link href="ChartJS/Chart.css" type="text/css" rel="stylesheet" />
 
-    <title>COVID-19 Tracker - danieljcode</title>
-  </head>
+  <link href="stylesheet.css" rel="stylesheet" type="text/css" />
 
-  <body>
+  <title>COVID-19 Tracker - danieljcode</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <header class="pt-5">
+          <h1>
+            <i class="fas fa-virus fa-1x mr-3 fa-pulse"></i>COVID-19 Tracker
+          </h1>
+          <p class="mb-5">
+            Track the spread of the worldwide Coronavirus (Covid-19) Outbreak
+          </p>
+          <span class="float-right">
+            <div class="dark-mode-switch text-center">
+              <p>Dark Mode</p>
+              <label class="switch">
+                <input type="checkbox" id="switch" onchange="switchDarkMode()" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <i id="last-update"></i>
+          </span>
+          <br />
+          <hr />
+        </header>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div id="form">
+          <h3 class="pb-3">Country</h3>
+          <select id="mainSelector" class="custom-select sources" name="NameOfCountry">
+            <option value="FR">France</option>
+            <option value="DE">Germany</option>
+            <option value="GB">United Kingdom</option>
+            <option value="US">United States</option>
+            <option value="AU">Australia</option>
+            <option value="IE">Ireland</option>
+            <option value="FI">Finland</option>
+            <option value="HK">Hong Kong</option>
+            <option value="ID">Indonesia</option>
+            <option value="BY">Belarus</option>
+            <option value="BE">Belgium</option>
+            <option value="RU">Russian Federation</option>
+            <option value="SA">Saudi Arabia</option>
+            <option value="ES">Spain</option>
+            <option value="SE">Sweden</option>
+            <option value="AF">Afghanistan</option>
+            <option value="IN">India</option>
+            <option value="BR">Brazil</option>
+            <option value="NP">Nepal</option>
+            <option value="CN">China</option>
+            <option value="NZ">New Zealand</option>
+            <option value="MX">Mexico</option>
+            <option value="NL">Netherlands</option>
+            <option value="DK">Denmark</option>
+            <option value="IS">Iceland</option>
+            <option value="NO">Norway</option>
+            <option value="CO">Colombia</option>
+            <option value="ZA">South Africa</option>
+            <option value="PE">Peru</option>
+            <option value="AE">United Arab Emirates</option>
+            <option value="IR">Iran</option>
+            <option value="CL">Chile</option>
+            <option value="IQ">Iraq</option>
+            <option value="BD">Bangladesh</option>
+            <option value="BT">Bhutan</option>
+            <option value="MV">Maldives</option>
+            <option value="PK">Pakistan</option>
+            <option value="LK">Sri Lanka</option>
+            <option value="FO">Faroe Islands</option>
+            <option value="AX">Aland Islands</option>
+            <option value="GL">Greenland</option>
+            <option value="PH">Philippines</option>
+            <option value="AT">Austria</option>
+            <option value="BG">Bulgaria</option>
+            <option value="HR">Croatia</option>
+            <option value="CY">Cyprus</option>
+            <option value="CZ">Czech Republic</option>
+            <option value="EE">Estonia</option>
+            <option value="GR">Greece</option>
+            <option value="HU">Hungary</option>
+            <option value="IT">Italy</option>
+            <option value="LV">Latvia</option>
+            <option value="LT">Lithuania</option>
+            <option value="LU">Luxembourg</option>
+            <option value="MT">Malta</option>
+            <option value="PL">Poland</option>
+            <option value="PT">Portugal</option>
+            <option value="RO">Romania</option>
+            <option value="SK">Slovakia</option>
+            <option value="SL">Slovenia</option>
+            <option value="EC">Ecuador</option>
+            <option value="AR">Argentina</option>
+            <option value="BO">Bolivia</option>
+            <option value="GY">Guyana</option>
+            <option value="PY">Paraguay</option>
+            <option value="SR">Suriname</option>
+            <option value="UY">Uruguay</option>
+            <option value="VE">Venezuela</option>
+            <option value="NG">Nigeria</option>
+            <option value="ET">Ethiopia</option>
+            <option value="EG">Egypt</option>
+            <option value="CD">Congo</option>
+            <option value="TZ">Tanzania</option>
+            <option value="KE">Kenya</option>
+            <option value="UG">Uganda</option>
+            <option value="DZ">Algeria</option>
+            <option value="SD">Sudan</option>
+            <option value="MA">Morocco</option>
+            <option value="GH">Ghana</option>
+            <option value="SV">El Salvador</option>
+            <option value="AL">Albania</option>
+            <option value="TD">Chad</option>
+            <option value="CR">Costa Rica</option>
+            <option value="DO">Dominican Republic</option>
+            <option value="HT">Haiti</option>
+            <option value="IL">Israel</option>
+            <option value="JO">Jordan</option>
+            <option value="LY">Libya</option>
+            <option value="ML">Mali</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-12 col-md-4 d-flex align-items-stretch mt-3">
+        <div class="card w-100">
+          <div class="d-flex flex-column justify-content-center align-items-center card-body">
+            <h2 class="text-center">Recovered</h2>
+            <i class="fas fa-heart fa-3x faa-float animated"></i>
+            <h3 class="mb-0" id="recovered">-</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 d-flex align-items-stretch mt-3">
+        <div class="card w-100">
+          <div class="d-flex flex-column justify-content-center align-items-center card-body">
+            <h2 class="text-center">Current Cases</h2>
+            <i class="fas fa-virus fa-3x faa-float animated"></i>
+            <h3 class="mb-0" id="cases">-</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 mb-5 mb-md-0 d-flex align-items-stretch mt-3">
+        <div class="card w-100">
+          <div class="d-flex flex-column justify-content-center align-items-center card-body">
+            <h2 class="text-center">Current Deaths</h2>
+            <i class="fas fa-skull-crossbones fa-3x faa-float animated"></i>
+            <h3 class="mb-0" id="deaths">-</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center">
+        <h2>Two Week Projections</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-5 col-sm-12 col-md-12" id="predictions">
+        <div class="col-12 box">
+          <h3>No data available</h3>
+        </div>
+        <div class="col-12 box">
+          <h3>...</h3>
+        </div>
+        <div class="col-12 box">
+          <h3>...</h3>
+        </div>
+      </div>
+      <div class="col-lg-7 col-sm-12 col-md-12">
+        <div class="col-12 box-">
+          <canvas id="myChart" width="100%" height="60vh"></canvas>
+        </div>
+        <div class="col-12 box-">
+          <canvas id="myChart2" width="100%" height="60vh"></canvas>
+        </div>
+        <hr />
+        <div class="col-12" style="height: 500px">
+          <a class="twitter-timeline" data-height="500" href="https://twitter.com/WHO?ref_src=twsrc%5Etfw">Tweets by
+            WHO</a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <div class="col-12" style="height: 55%">
+          <iframe src="https://news.sky.com/topic/coronavirus-8483" height="100%" width="100%"
+            style="overflow: hidden; border: none"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+<footer>
+  <div class="mt-5 pt-5 pb-5 footer">
     <div class="container">
       <div class="row">
-        <div class="col">
-          <header class="pt-5">
-            <h1>
-              <i class="fas fa-virus fa-1x mr-3 fa-pulse"></i>COVID-19 Tracker
-            </h1>
-            <p class="mb-5">
-              Track the spread of the worldwide Coronavirus (Covid-19) Outbreak
-            </p>
-            <span class="float-right">
-              <div class="dark-mode-switch text-center">
-                <p>Dark Mode</p>
-                <label class="switch">
-                  <input type="checkbox" id="switch" onchange="switchDarkMode()" />
-                  <span class="slider round"></span>
-                </label>
-              </div>
-              <i id="last-update"></i>
-            </span>
-            <br />
-            <hr />
-          </header>
+        <div class="col-lg-5 col-xs-12 about-company">
+          <h2>About this project</h2>
+          <p>
+            All data for COVID-19 Tracker is provided by the "COVID-19 API"
+            (<a href="https://covid19-api.org" target="new">https://covid19-api.org</a>), Source code for this website
+            can be found on github
+            <a href="https://github.com/danieljcode/COVID-19tracker" target="new">here</a>.
+          </p>
         </div>
       </div>
       <div class="row">
-        <div class="col">
-          <div id="form">
-            <h3 class="pb-3">Country</h3>
-            <select
-              id="mainSelector"
-              class="custom-select sources"
-              name="NameOfCountry"
-            >
-              <option value="FR">France</option>
-              <option value="DE">Germany</option>
-              <option value="GB">United Kingdom</option>
-              <option value="US">United States</option>
-              <option value="AU">Australia</option>
-              <option value="IE">Ireland</option>
-              <option value="FI">Finland</option>
-              <option value="HK">Hong Kong</option>
-              <option value="ID">Indonesia</option>
-              <option value="BY">Belarus</option>
-              <option value="BE">Belgium</option>
-              <option value="RU">Russian Federation</option>
-              <option value="SA">Saudi Arabia</option>
-              <option value="ES">Spain</option>
-              <option value="SE">Sweden</option>
-              <option value="AF">Afghanistan</option>
-              <option value="IN">India</option>
-              <option value="BR">Brazil</option>
-              <option value="NP">Nepal</option>
-              <option value="CN">China</option>
-              <option value="NZ">New Zealand</option>
-              <option value="MX">Mexico</option>
-              <option value="NL">Netherlands</option>
-              <option value="DK">Denmark</option>
-              <option value="IS">Iceland</option>
-              <option value="NO">Norway</option>
-              <option value="CO">Colombia</option>
-              <option value="ZA">South Africa</option>
-              <option value="PE">Peru</option>
-              <option value="AE">United Arab Emirates</option>
-              <option value="IR">Iran</option>
-              <option value="CL">Chile</option>
-              <option value="IQ">Iraq</option>
-              <option value="BD">Bangladesh</option>
-              <option value="BT">Bhutan</option>
-              <option value="MV">Maldives</option>
-              <option value="PK">Pakistan</option>
-              <option value="LK">Sri Lanka</option>
-              <option value="FO">Faroe Islands</option>
-              <option value="AX">Aland Islands</option>
-              <option value="GL">Greenland</option>
-              <option value="PH">Philippines</option>
-              <option value="AT">Austria</option>
-              <option value="BG">Bulgaria</option>
-              <option value="HR">Croatia</option>
-              <option value="CY">Cyprus</option>
-              <option value="CZ">Czech Republic</option>
-              <option value="EE">Estonia</option>
-              <option value="GR">Greece</option>
-              <option value="HU">Hungary</option>
-              <option value="IT">Italy</option>
-              <option value="LV">Latvia</option>
-              <option value="LT">Lithuania</option>
-              <option value="LU">Luxembourg</option>
-              <option value="MT">Malta</option>
-              <option value="PL">Poland</option>
-              <option value="PT">Portugal</option>
-              <option value="RO">Romania</option>
-              <option value="SK">Slovakia</option>
-              <option value="SL">Slovenia</option>
-              <option value="EC">Ecuador</option>
-              <option value="AR">Argentina</option>
-              <option value="BO">Bolivia</option>
-              <option value="GY">Guyana</option>
-              <option value="PY">Paraguay</option>
-              <option value="SR">Suriname</option>
-              <option value="UY">Uruguay</option>
-              <option value="VE">Venezuela</option>
-              <option value="NG">Nigeria</option>
-              <option value="ET">Ethiopia</option>
-              <option value="EG">Egypt</option>
-              <option value="CD">Congo</option>
-              <option value="TZ">Tanzania</option>
-              <option value="KE">Kenya</option>
-              <option value="UG">Uganda</option>
-              <option value="DZ">Algeria</option>
-              <option value="SD">Sudan</option>
-              <option value="MA">Morocco</option>
-              <option value="GH">Ghana</option>
-              <option value="SV">El Salvador</option>
-              <option value="AL">Albania</option>
-              <option value="TD">Chad</option>
-              <option value="CR">Costa Rica</option>
-              <option value="DO">Dominican Republic</option>
-              <option value="HT">Haiti</option>
-              <option value="IL">Israel</option>
-              <option value="JO">Jordan</option>
-              <option value="LY">Libya</option>
-              <option value="ML">Mali</option>
-            </select>
+        <h2 class="mt-lg-0 mt-sm-4">Contributors</h2>
+        <div class="d-flex flex-wrap align-content-around">
+          <div class="center contributor">
+            <div>
+              <a target="_blank" href="https://github.com/danieljcode">
+                <img src="https://github.com/danieljcode.png" alt="Avatar" class="avatar" />
+              </a>
+            </div>
+            danieljcode
+          </div>
+          <div class="center contributor">
+            <div>
+              <a target="_blank" href="https://github.com/ptrandev">
+                <img src="https://github.com/ptrandev.png" alt="Avatar" class="avatar" />
+              </a>
+            </div>
+            ptrandev
+          </div>
+          <div class="center contributor">
+            <div>
+              <a target="_blank" href="https://github.com/link2rn">
+                <img src="https://github.com/link2rn.png" alt="Avatar" class="avatar" />
+              </a>
+            </div>
+            link2rn
+          </div>
+          <div class="center contributor">
+            <div>
+              <a target="_blank" href="https://github.com/endrose">
+                <img src="https://github.com/endrose.png" alt="Avatar" class="avatar" />
+              </a>
+            </div>
+            endrose
+          </div>
+          <div class="center contributor">
+            <div>
+              <a target="_blank" href="https://github.com/singhayushh">
+                <img src="https://github.com/singhayushh.png" alt="Avatar" class="avatar" />
+              </a>
+            </div>
+            singhayushh
+          </div>
+
+          <div class="center contributor">
+            <div>
+              <a target="_blank" href="https://github.com/dpakgtm07">
+                <img src="https://github.com/dpakgtm07.png" alt="Avatar" class="avatar" />
+              </a>
+            </div>
+            dpakgtm07
+          </div>
+          <div class="center contributor">
+            <div>
+              <a target="_blank" href="https://github.com/sqwyer">
+                <img src="https://github.com/sqwyer.png" alt="Avatar" class="avatar" />
+              </a>
+            </div>
+            sqwyer
+          </div>
+          <div class="center contributor">
+            <div>
+              <a target="_blank" href="https://github.com/LeVuMinhHuy">
+                <img src="https://github.com/LeVuMinhHuy.png" alt="Avatar" class="avatar" />
+              </a>
+            </div>
+            LeVuMinhHuy
+          </div>
+          <div class="center contributor">
+            <div>
+              <a target="_blank" href="https://github.com/razod">
+                <img src="https://github.com/razod.png" alt="Avatar" class="avatar" />
+              </a>
+            </div>
+            razod
+          </div>
+          <div class="center contributor">
+            <div>
+              <a target="_blank" href="https://github.com/kingslayer2357">
+                <img src="https://github.com/kingslayer2357.png" alt="Avatar" class="avatar" />
+              </a>
+            </div>
+            kingslayer2357
+          </div>
+          <div class="center contributor">
+            <div>
+              <a target="_blank" href="https://github.com/gaurav7019">
+                <img src="https://github.com/gaurav7019.png" alt="Avatar" class="avatar" />
+              </a>
+            </div>
+            gaurav7019
+          </div>
+          <div class="center contributor">
+            <div>
+              <a target="_blank" href="https://github.com/lokeshkumar9600">
+                <img src="https://github.com/lokeshkumar9600.png" alt="Avatar" class="avatar" />
+              </a>
+            </div>
+            lokeshkumar9600
           </div>
         </div>
       </div>
-      <div class="row mb-5">
-        <div class="col-12 col-md-4 d-flex align-items-stretch mt-3">
-          <div class="card w-100">
-            <div
-              class="d-flex flex-column justify-content-center align-items-center card-body"
-            >
-              <h2 class="text-center">Recovered</h2>
-              <i class="fas fa-heart fa-3x faa-float animated"></i>
-              <h3 class="mb-0" id="recovered">-</h3>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-4 d-flex align-items-stretch mt-3">
-          <div class="card w-100">
-            <div
-              class="d-flex flex-column justify-content-center align-items-center card-body"
-            >
-              <h2 class="text-center">Current Cases</h2>
-              <i class="fas fa-virus fa-3x faa-float animated"></i>
-              <h3 class="mb-0" id="cases">-</h3>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="col-12 col-md-4 mb-5 mb-md-0 d-flex align-items-stretch mt-3"
-        >
-          <div class="card w-100">
-            <div
-              class="d-flex flex-column justify-content-center align-items-center card-body"
-            >
-              <h2 class="text-center">Current Deaths</h2>
-              <i class="fas fa-skull-crossbones fa-3x faa-float animated"></i>
-              <h3 class="mb-0" id="deaths">-</h3>
-            </div>
-          </div>
+      <div class="row mt-3">
+        <div class="col-lg-5 col-xs-12 mt-1 ">
+          <h2>Contact me at:</h2>
+          <p>
+            <i class="fa fa-envelope-o mr-3"></i><a href="mailto:danieljohncode@tutanota.com"
+              style="color: white;">danieljohncode@tutanota.com</a>
+          </p>
         </div>
       </div>
-      <hr />
-      <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-          <h2>Two Week Projections</h2>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-5 col-sm-12 col-md-12" id="predictions">
-          <div class="col-12 box">
-            <h3>No data available</h3>
-          </div>
-          <div class="col-12 box">
-            <h3>...</h3>
-          </div>
-          <div class="col-12 box">
-            <h3>...</h3>
-          </div>
-        </div>
-        <div class="col-lg-7 col-sm-12 col-md-12">
-          <div class="col-12 boxBlue">
-            <canvas id="myChart" width="100%" height="60vh"></canvas>
-          </div>
-          <div class="col-12 boxBlue">
-            <canvas id="myChart2" width="100%" height="60vh"></canvas>
-          </div>
-          <hr />
-          <div class="col-12" style="height: 500px">
-            <a
-              class="twitter-timeline"
-              data-height="500"
-              href="https://twitter.com/WHO?ref_src=twsrc%5Etfw"
-              >Tweets by WHO</a
-            >
-            <script
-              async
-              src="https://platform.twitter.com/widgets.js"
-              charset="utf-8"
-            ></script>
-          </div>
-          <div class="col-12" style="height: 55%">
-            <iframe
-              src="https://news.sky.com/topic/coronavirus-8483"
-              height="100%"
-              width="100%"
-              style="overflow: hidden; border: none"
-            ></iframe>
-          </div>
+      <div class="row mt-5">
+        <div class="col copyright">
+          <p class="">
+            <small class="text-white-50">Open source project under the GNU public licence V3.0</small>
+          </p>
         </div>
       </div>
     </div>
+  </div>
+</footer>
 
-    <script src="app.js"></script>
-  </body>
-
-  <footer>
-    <div class="mt-5 pt-5 pb-5 footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-5 col-xs-12 about-company">
-            <h2>About this project</h2>
-            <p>
-              All data for COVID-19 Tracker is provided by the "COVID-19 API"
-              (<a href="https://covid19-api.org" target="new"
-                >https://covid19-api.org</a
-              >), Source code for this website can be found on github
-              <a
-                href="https://github.com/danieljcode/COVID-19tracker"
-                target="new"
-                >here</a
-              >.
-            </p>
-          </div>
-          <div class="col-lg-3 col-xs-12 links"></div>
-          <div class="col-lg-4 col-xs-12 location">
-            <h4 class="mt-lg-0 mt-sm-4">Contributors</h4>
-            <p>
-              <a href="https://github.com/danieljcode"
-                >https://github.com/danieljcode</a
-              >
-            </p>
-            <p>
-              <a href="https://github.com/ptrandev"
-                >https://github.com/ptrandev</a
-              >
-            </p>
-            <p>
-              <a href="https://github.com/link2rn"
-                >https://github.com/link2rn</a
-              >
-            </p>
-            <p>
-              <a href="https://github.com/endrose"
-                >https://github.com/endrose</a
-              >
-            </p>
-            <p>
-              <a href="https://github.com/singhayushh"
-                >https://github.com/singhayushh</a
-              >
-            </p>
-            <p>
-              <a href="https://github.com/dpakgtm07"
-                >https://github.com/dpakgtm07</a
-              >
-            </p>
-            <p>
-              <a href="https://github.com/sqwyer">https://github.com/sqwyer</a>
-            </p>
-            <p>
-              <a href="https://github.com/LeVuMinhHuy"
-                >https://github.com/LeVuMinhHuy</a
-              >
-            </p>
-            <p>
-              <a href="https://github.com/razod">https://github.com/razod</a>
-            </p>
-            <p>
-              <a href="https://github.com/kingslayer2357"
-                >https://github.com/kingslayer2357</a
-              >
-            </p>
-            <p>
-              <a href="https://github.com/gaurav7019"
-                >https://github.com/gaurav7019</a
-              >
-            </p>
-            <p>
-              <a href="https://github.com/lokeshkumar9600"
-                >https://github.com/lokeshkumar9600</a
-              >
-            </p>
-
-
-            <p>
-              <i class="fa fa-envelope-o mr-3"></i
-              ><a href="mailto:danieljohncode@tutanota.com" style="color: white"
-                >danieljohncode@tutanota.com</a
-              >
-            </p>
-          </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col copyright">
-            <p class="">
-              <small class="text-white-50"
-                >Open source project under the GNU public licence V3.0</small
-              >
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
 </html>
