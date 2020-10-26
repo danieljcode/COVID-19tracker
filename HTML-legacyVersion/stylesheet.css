@@ -138,6 +138,9 @@ h1 {
 .red {
   color: red;
 }
+.crimson {
+  color: crimson;
+}
 
 #predictions {
   display: flex;
@@ -579,4 +582,20 @@ hr {
 .card:hover {
   border-radius: 50px;
   transform: scale(1.1);
+}
+
+
+.avatar {
+	vertical-align: middle;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+}
+
+.contributor{
+	padding: 15px;
+	text-align: center;
+}
+.contact{
+	margin-top: 20px;
 }
