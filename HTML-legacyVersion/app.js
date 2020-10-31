@@ -1,6 +1,8 @@
 console.log("Built in 2020 by danieljcode");
 console.log("https://github.com/danieljcode");
 
+AOS.init();
+
 const inputMain = document.getElementById("mainSelector");
 const lastupdate = document.getElementById("last-update");
 
@@ -109,6 +111,7 @@ function getFutureData() {
     response.forEach((element) => {
       var prediction = document.createElement("div");
       prediction.setAttribute("class", "box-");
+      prediction.setAttribute("data-aos", "fade-up");
       var casesNum = document.createElement("h1");
       casesNum.setAttribute("class", "crimson");
       var dateNum = document.createElement("h2");
