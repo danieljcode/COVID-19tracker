@@ -100,5 +100,6 @@
 - https://github.com/sqwyer
 - https://github.com/YagyikPrajapat
 - https://github.com/tck13
+- https://github.com/tejusrevi
 
 (PLEASE ADD YOURSELF TO THE CONTRIBUTORS LIST WHEN YOU CREATE A PULL REQUEST)
