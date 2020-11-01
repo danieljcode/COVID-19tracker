@@ -9,31 +9,8 @@ const lastupdate = document.getElementById("last-update");
 var timezone = "Europe/Paris";
 var countryCode = "FR";
 
-var mode = "light";
-const buildTwitterTimeline = (currentMode) =>{
-  return timeline = twttr.widgets.createTimeline(
-    {
-      sourceType: "profile",
-      screenName: "WHO"
-    },
-    document.getElementById("twitter-timeline-container"),
-    {
-      height: 500,
-      chrome: "nofooter",
-      theme: currentMode
-    }
-  );
-  
-}
-
-buildTwitterTimeline(mode)
-const switchDarkMode = (e) =>{
+const switchDarkMode = (e) =>
   document.querySelector("body").classList.toggle("dark-mode");
-  document.getElementById("twitter-timeline-container").removeChild(document.getElementById("twitter-timeline-container").lastChild);
-  if (mode == "light") mode = "dark"
-  else mode = "light"
-  buildTwitterTimeline(mode)
-}
 
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(async function (position) {
